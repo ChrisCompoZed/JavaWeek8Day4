@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Company Page</title>
+</head>
+<body>
+<h1>Companies</h1>
+<table>
+    <thead>
+    <tr>
+        <td>number</td>
+        <td>Company Name</td>
+        <td>Number of Employees</td>
+    </tr>
+    </thead>
+<tbody>
+    <!--/*@thymesVar id="companies" type = "com.galvanize.company.Company[]"*/-->
+    <tr th:each="company,rowStat : ${companies}">
+        <td th:text="${rowStat.count}"></td>
+        <td th:text="${company.getName()}"></td>
+        <td th:text="${company.getNumberOfEmployees()}"></td>
+    </tr>
+</tbody>
+
+
+</table>
+
+</body>
+</html>
